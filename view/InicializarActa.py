@@ -23,8 +23,9 @@ def agregar_datos(st, controller):
     evaluacion_obj.tipo_trabajo  = st.selectbox("Tipo de trabajo", ('Aplicado', 'Investigacion'))
     evaluacion_obj.nombre_trabajo = st.text_input("Nombre del trabajo", value=evaluacion_obj.nombre_trabajo )
     evaluacion_obj.nombre_director = st.text_input("Nombre del director",value= evaluacion_obj.nombre_director )
-    codirector = st.text_input("Nombre del codirector")
-    evaluacion_obj.nombre_codirector = codirector
+    codirector = st.selectbox( "El trabajo tiene coodirector?", ('Si', 'No') )
+    if codirector == 'Si':
+        evaluacion_obj.nombre_codirector = st.text_input( "Nombre codirector: " )
     evaluacion_obj.enfasis = st.text_input("Enfasis en:", value= evaluacion_obj.enfasis)
     evaluacion_obj.nombre_jurado1 = st.text_input("Nombre del jurado1", value=evaluacion_obj.nombre_jurado1 )
     evaluacion_obj.nombre_jurado2 = st.text_input("Nombre del jurado2", value= evaluacion_obj.nombre_jurado2 )
