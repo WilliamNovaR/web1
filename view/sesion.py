@@ -42,7 +42,7 @@ def iniciar_sesion( st, cuentasController, accionesController):
     #se leen los datos para iniciar sesion
     usuario = st.text_input( "Usuario:", key = 23 )
     contrasena = st.text_input( "Contraseña:", key = 7 )
-    col1, col2 = st.columns([0.2,0.7])#se crean las columnas para pode tener los botonos de iniciar sesion y entrar juntos
+    col1, col2 = st.columns([0.2, 1])#se crean las columnas para pode tener los botonos de iniciar sesion y entrar juntos
     with col1:
         login = st.button( "Iniciar sesion" )
         if login:
@@ -74,7 +74,7 @@ def iniciar_sesion( st, cuentasController, accionesController):
 #esta funcion es la que parmite salir de la sesion para poder volver a loguarse
 def cerrar_sesion(st, accionesController):
     st.subheader( "Cerrar sesion" )
-    col1, col2 = st.columns([0.2, 0.7]) #culumans para tener los botones de Cerrar sison y Salir juntos
+    col1, col2 = st.columns([0.2, 1]) #culumans para tener los botones de Cerrar sison y Salir juntos
     with col1:
         logout = st.button("Cerrar sesion")
         if logout:
