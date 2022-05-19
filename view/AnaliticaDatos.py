@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def escoger_analis(st, controller, criterio_controler):
     notas = []
     nombres = []
-    opcion = st.radio("Que analisis quieres hacer?",
+    opcion = st.selectbox("Que analisis quieres hacer?",
                   ('Encontrar Calificacion más alta', 'Estadisticas notas', 'Estadistica criterios'))
     if opcion == 'Encontrar Calificacion más alta':
         mayor_calificacion( st, controller )

@@ -19,7 +19,7 @@ def cargar( criterios_controller ):
 #funcion que crea el selector de opciones
 def seleccionar_opcion(st, criterios_controller):
     st.title("Criterios")
-    opcion = st.radio("Tipo de trabajo", ('Listar', 'Agregar', 'Editar', 'Eliminar'))
+    opcion = st.selectbox("Tipo de trabajo", ('Listar', 'Agregar', 'Editar', 'Eliminar'))
     if opcion == 'Listar':
         listar_criterio(st, criterios_controller)
     elif opcion == 'Agregar':

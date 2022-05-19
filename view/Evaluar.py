@@ -105,7 +105,7 @@ def agregar_evaluacion(st, controller, criterios_controller):
 
 def seleccion( st, controller, criterios_controller ):
     st.title("Ver y editar calificaciones")
-    ver_editar = st.radio("Que quieres hacer?", ('Ver', 'Editar'))
+    ver_editar = st.selectbox("Que quieres hacer?", ('Ver', 'Editar'))
     estudiantes_nombres = []  # en este arreglo guardaremos los nombres para luego desplegarlo en un select box
     criterios = []  # en este arreglo se fuardan los nombres de los riterios para luego desplegarlo en una select boc
     # se agregan los nombres a los arreglos
@@ -163,18 +163,18 @@ def editar_calificacion(st, controller, criterios, seleccionar_estudiantes):
             evaluacion.nombre_autor = st.text_input("Nombre del autor", value=evaluacion.nombre_autor)
             #este if sirve para saber cual es el valor con el que se guardo para que a la hora de editar esta dato sea el seleccionado
             if evaluacion.tipo_trabajo == 'Aplicado':
-                evaluacion.tipo_trabajo = st.radio("Tipo de trabajo", ('Aplicado', 'Investigacion'))
+                evaluacion.tipo_trabajo = st.selectbox("Tipo de trabajo", ('Aplicado', 'Investigacion'))
             else:
-                evaluacion.tipo_trabajo = st.radio("Tipo de trabajo", ('Aplicado', 'Investigacion'), index=1)
+                evaluacion.tipo_trabajo = st.selectbox("Tipo de trabajo", ('Aplicado', 'Investigacion'), index=1)
             # permite cambiar el titulo del trabajo y el director
             evaluacion.nombre_trabajo = st.text_input("Nombre del trabajo", value=evaluacion.nombre_trabajo)
             evaluacion.nombre_director = st.text_input("Nombre del director", value=evaluacion.nombre_director)
             st.write("codirector?")
             # este if sirve para saber cual es el valor con el que se guardo para que a la hora de editar esta dato sea el seleccionado y permita agregar o no codirector
             if evaluacion.nombre_codirector == "No aplica":
-                coodirector = st.radio("El trabajo tiene codirector?", ('Si', 'No'), index=1)
+                coodirector = st.selectbox("El trabajo tiene codirector?", ('Si', 'No'), index=1)
             else:
-                coodirector = st.radio("El trabajo tiene codirector?", ('Si', 'No'))
+                coodirector = st.selectbox("El trabajo tiene codirector?", ('Si', 'No'))
             if coodirector == 'Si':
                 evaluacion.nombre_codirector = st.text_input("Nombre del codirector",
                                                                          value=evaluacion.nombre_codirector)
