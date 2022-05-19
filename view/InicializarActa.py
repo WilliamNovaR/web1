@@ -19,14 +19,14 @@ def agregar_datos(st, controller):
         evaluacion_obj.periodo = datetime.today().strftime('%Y') + '-' + '2: '
     #lee datos de inicializacion de acta
     evaluacion_obj.periodo = st.text_input("Periodo de evaluacion", value=evaluacion_obj.periodo)
-    evaluacion_obj.nombre_autor = st.text_input("Nombre del autor")
+    evaluacion_obj.nombre_autor = st.text_input("Nombre del autor", value =evaluacion_obj.nombre_autor )
     tipo = st.radio("Tipo de trabajo", ('Aplicado', 'Investigacion'))
-    evaluacion_obj.nombre_trabajo = st.text_input("Nombre del trabajo")
-    evaluacion_obj.nombre_director = st.text_input("Nombre del director")
+    evaluacion_obj.nombre_trabajo = st.text_input("Nombre del trabajo", value=evaluacion_obj.nombre_trabajo )
+    evaluacion_obj.nombre_director = st.text_input("Nombre del director",evaluacion_obj.nombre_director = st.text_input )
     evaluacion_obj.nombre_codirector = st.text_input("Nombre del codirector", value =evaluacion_obj.nombre_codirector)
-    evaluacion_obj.enfasis = st.text_input("Enfasis en:")
-    evaluacion_obj.nombre_jurado1 = st.text_input("Nombre del jurado1")
-    evaluacion_obj.nombre_jurado2 = st.text_input("Nombre del jurado2")
+    evaluacion_obj.enfasis = st.text_input("Enfasis en:", value= evaluacion_obj.enfasis)
+    evaluacion_obj.nombre_jurado1 = st.text_input("Nombre del jurado1", value=evaluacion_obj.nombre_jurado1 )
+    evaluacion_obj.nombre_jurado2 = st.text_input("Nombre del jurado2", value= evaluacion_obj.nombre_jurado2 )
     #pregunta el numero del acta desde el cual se va a empezar
     if len(controller.evaluaciones):
         evaluacion_obj.inicilizar = st.number_input("Numero de acta:", value=controller.evaluaciones[
