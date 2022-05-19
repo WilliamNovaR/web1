@@ -1,0 +1,9 @@
+﻿openpyxl
+streamlit>=1.8.1
+streamlit-option-menu>=0.3.2
+pydataxm == 0.2.6
+
+Pillow~=9.1.0
+DateTime~=4.4
+matplotlib~=3.5.2
+fpdf~=1.7.2
