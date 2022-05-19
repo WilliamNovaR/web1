@@ -23,9 +23,7 @@ def agregar_datos(st, controller):
     tipo = st.radio("Tipo de trabajo", ('Aplicado', 'Investigacion'))
     evaluacion_obj.nombre_trabajo = st.text_input("Nombre del trabajo")
     evaluacion_obj.nombre_director = st.text_input("Nombre del director")
-    coodirector = st.radio("El trabajo tiene codirector?", ('Si', 'No'))
-    if coodirector == 'Si':#pregunta si tiene codirector para preguntar el nombre o no
-        nombre_coodirector = st.text_input("Nombre del codirector")
+    evaluacion_obj.nombre_codirector = st.text_input("Nombre del codirector", value =evaluacion_obj.nombre_codirector)
     evaluacion_obj.enfasis = st.text_input("Enfasis en:")
     evaluacion_obj.nombre_jurado1 = st.text_input("Nombre del jurado1")
     evaluacion_obj.nombre_jurado2 = st.text_input("Nombre del jurado2")
@@ -44,7 +42,6 @@ def agregar_datos(st, controller):
             if evaluacion_obj.id_estudiante == i.id_estudiante:
                 st.error( "Id repetida" )
                 return
-        evaluacion_obj.nombre_codirector = nombre_coodirector
         evaluacion_obj.tipo_trabajo = tipo
         controller.evaluaciones.append( evaluacion_obj )
         cargar( controller )
