@@ -22,7 +22,7 @@ def crear_cuenta(st, cuentaController):
     #se leen los datos que va a tener la cuenta y se guardan dentro de nueva_cuenta
     nueva_cuenta.usuario = st.text_input( "Usuario:", value = '' )
     nueva_cuenta.contrasena = st.text_input( "Contraseña:", value= ''  )
-    tipo = st.radio( "Que tipo de cuenta quieres crear?", ('Asistente', 'Jurado', 'Director/a') )
+    tipo = st.selectbox( "Que tipo de cuenta quieres crear?", ('Asistente', 'Jurado', 'Director/a') )
     crear = st.button( "Crear" )
     if crear:
         #comprueba que no se creen cuentas con usuarios ya creados
